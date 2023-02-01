@@ -1,0 +1,12 @@
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\bin\Debug\net6.0\io.quind.practicaBanco.domain.deps.json
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\bin\Debug\net6.0\io.quind.practicaBanco.domain.dll
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\bin\Debug\net6.0\io.quind.practicaBanco.domain.pdb
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\obj\Debug\net6.0\io.quind.practicaBanco.domain.csproj.AssemblyReference.cache
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\obj\Debug\net6.0\io.quind.practicaBanco.domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\obj\Debug\net6.0\io.quind.practicaBanco.domain.AssemblyInfoInputs.cache
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\obj\Debug\net6.0\io.quind.practicaBanco.domain.AssemblyInfo.cs
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\obj\Debug\net6.0\io.quind.practicaBanco.domain.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\obj\Debug\net6.0\io.quind.practicaBanco.domain.dll
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\obj\Debug\net6.0\refint\io.quind.practicaBanco.domain.dll
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\obj\Debug\net6.0\io.quind.practicaBanco.domain.pdb
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.domain\obj\Debug\net6.0\ref\io.quind.practicaBanco.domain.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\io.quind.practicaBanco.app.props" />
+</Project>
