@@ -6,6 +6,22 @@ namespace io.quind.practicaBanco.Models.Clientes;
 
 public  class Cliente
 {
+    public Cliente(int id, int tiposIdentificacion, int numeroIdentificacion,
+        string nombre, string apellido, string email, DateTime? fechaNacimiento,
+        DateTime? fechaCreacionRegistro, DateTime? fechaActualizacionRegistro)
+    {
+        Id = id;
+        TiposIdentificacion = tiposIdentificacion;
+        NumeroIdentificacion = numeroIdentificacion;
+        Nombre = nombre;
+        Apellido = apellido;
+        Email = email;
+        FechaNacimiento = fechaNacimiento;
+        FechaCreacionRegistro = fechaCreacionRegistro;
+        FechaActualizacionRegistro = fechaActualizacionRegistro;
+        
+    }
+
     public int Id { get; set; }
 
     public int TiposIdentificacion { get; set; }
