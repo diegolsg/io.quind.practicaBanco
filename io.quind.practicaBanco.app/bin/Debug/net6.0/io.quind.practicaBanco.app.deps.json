@@ -7,14 +7,41 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "io.quind.practicaBanco.app/1.0.0": {
+        "dependencies": {
+          "io.quind.practicaBanco.DTO": "1.0.0",
+          "io.quind.practicaBanco.domain": "1.0.0"
+        },
         "runtime": {
           "io.quind.practicaBanco.app.dll": {}
+        }
+      },
+      "io.quind.practicaBanco.domain/1.0.0": {
+        "runtime": {
+          "io.quind.practicaBanco.domain.dll": {}
+        }
+      },
+      "io.quind.practicaBanco.DTO/1.0.0": {
+        "dependencies": {
+          "io.quind.practicaBanco.domain": "1.0.0"
+        },
+        "runtime": {
+          "io.quind.practicaBanco.DTO.dll": {}
         }
       }
     }
   },
   "libraries": {
     "io.quind.practicaBanco.app/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "io.quind.practicaBanco.domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "io.quind.practicaBanco.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

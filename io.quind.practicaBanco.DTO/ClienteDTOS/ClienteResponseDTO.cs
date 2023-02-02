@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace o.quind.practicaBanco.DTO.ClienteDTOS
 {
-    public class ClienteResponseDTO
+    public class ClienteResponseDto
     {
         public string? TipoIdentificacion { get; set; }
 
@@ -21,11 +21,10 @@ namespace o.quind.practicaBanco.DTO.ClienteDTOS
         public DateTime? FechaCreacionRegistro { get; set; }
 
         public DateTime? FechaActualizacionRegistro { get; set; }
-
-
-        public static ClienteResponseDTO Of(Cliente cliente)
+        
+        public static ClienteResponseDto Of(Cliente cliente)
         {
-            return new ClienteResponseDTO
+            return new ClienteResponseDto
             {
 
                 TipoIdentificacion = cliente.TiposIdentificacion.ToString(),

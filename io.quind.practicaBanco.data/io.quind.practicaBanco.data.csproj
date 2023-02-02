@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\io.quind.practicaBanco.date\io.quind.practicaBanco.entity.csproj" />
+    <ProjectReference Include="..\io.quind.practicaBanco.domain\io.quind.practicaBanco.domain.csproj" />
   </ItemGroup>
 
 </Project>

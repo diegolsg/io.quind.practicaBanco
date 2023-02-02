@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using io.quind.practicaBanco.entity.CuentasEntiies;
+using io.quind.practicaBanco.entity.CuentasEntities;
 
 namespace io.quind.practicaBanco.entity.TransaccionesEntities;
 

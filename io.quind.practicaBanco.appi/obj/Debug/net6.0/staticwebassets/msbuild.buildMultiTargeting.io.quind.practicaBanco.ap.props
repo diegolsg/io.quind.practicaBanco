@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\io.quind.practicaBanco.ap.props" />
+</Project>

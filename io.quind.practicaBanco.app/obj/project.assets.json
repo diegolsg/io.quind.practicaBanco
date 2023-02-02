@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "io.quind.practicaBanco.domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/io.quind.practicaBanco.domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/io.quind.practicaBanco.domain.dll": {}
+        }
+      },
+      "io.quind.practicaBanco.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "io.quind.practicaBanco.domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/io.quind.practicaBanco.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/io.quind.practicaBanco.DTO.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "io.quind.practicaBanco.domain/1.0.0": {
+      "type": "project",
+      "path": "../io.quind.practicaBanco.domain/io.quind.practicaBanco.domain.csproj",
+      "msbuildProject": "../io.quind.practicaBanco.domain/io.quind.practicaBanco.domain.csproj"
+    },
+    "io.quind.practicaBanco.DTO/1.0.0": {
+      "type": "project",
+      "path": "../io.quind.practicaBanco.DTO/io.quind.practicaBanco.DTO.csproj",
+      "msbuildProject": "../io.quind.practicaBanco.DTO/io.quind.practicaBanco.DTO.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "io.quind.practicaBanco.DTO >= 1.0.0",
+      "io.quind.practicaBanco.domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\diego\\.nuget\\packages\\": {}
@@ -33,7 +71,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\diego\\source\\repos\\io.quind.practicaBanco\\io.quind.practicaBanco.domain\\io.quind.practicaBanco.domain.csproj": {
+              "projectPath": "C:\\Users\\diego\\source\\repos\\io.quind.practicaBanco\\io.quind.practicaBanco.domain\\io.quind.practicaBanco.domain.csproj"
+            },
+            "C:\\Users\\diego\\source\\repos\\io.quind.practicaBanco\\io.quind.practicaBanco.DTO\\io.quind.practicaBanco.DTO.csproj": {
+              "projectPath": "C:\\Users\\diego\\source\\repos\\io.quind.practicaBanco\\io.quind.practicaBanco.DTO\\io.quind.practicaBanco.DTO.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

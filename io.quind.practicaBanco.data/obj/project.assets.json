@@ -1047,6 +1047,16 @@
           }
         }
       },
+      "io.quind.practicaBanco.domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/io.quind.practicaBanco.domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/io.quind.practicaBanco.domain.dll": {}
+        }
+      },
       "io.quind.practicaBanco.entity/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -3229,6 +3239,11 @@
         "version.txt"
       ]
     },
+    "io.quind.practicaBanco.domain/1.0.0": {
+      "type": "project",
+      "path": "../io.quind.practicaBanco.domain/io.quind.practicaBanco.domain.csproj",
+      "msbuildProject": "../io.quind.practicaBanco.domain/io.quind.practicaBanco.domain.csproj"
+    },
     "io.quind.practicaBanco.entity/1.0.0": {
       "type": "project",
       "path": "../io.quind.practicaBanco.date/io.quind.practicaBanco.entity.csproj",
@@ -3238,6 +3253,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 7.0.2",
+      "io.quind.practicaBanco.domain >= 1.0.0",
       "io.quind.practicaBanco.entity >= 1.0.0"
     ]
   },
@@ -3270,6 +3286,9 @@
           "projectReferences": {
             "C:\\Users\\diego\\source\\repos\\io.quind.practicaBanco\\io.quind.practicaBanco.date\\io.quind.practicaBanco.entity.csproj": {
               "projectPath": "C:\\Users\\diego\\source\\repos\\io.quind.practicaBanco\\io.quind.practicaBanco.date\\io.quind.practicaBanco.entity.csproj"
+            },
+            "C:\\Users\\diego\\source\\repos\\io.quind.practicaBanco\\io.quind.practicaBanco.domain\\io.quind.practicaBanco.domain.csproj": {
+              "projectPath": "C:\\Users\\diego\\source\\repos\\io.quind.practicaBanco\\io.quind.practicaBanco.domain\\io.quind.practicaBanco.domain.csproj"
             }
           }
         }

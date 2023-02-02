@@ -1,10 +1,12 @@
-﻿using io.quind.banco.dominio.Models;
+﻿
 
-namespace io.quind.banco.dto.CuentaDTOS
+using io.quind.practicaBanco.domain.Models;
+
+namespace io.quind.practicaBanco.DTO.CuentaDTOS
 {
     public class CuentaResponseDTO
     {
-
+        public int ClienteId { get; set; }
 
         public string TipoCuenta { get; set; }
 
@@ -23,13 +25,15 @@ namespace io.quind.banco.dto.CuentaDTOS
         {
             return new CuentaResponseDTO
             {
-                TipoCuenta = cuenta.TiposCuentas.ToString(),
-                NumeroCuenta = cuenta.NumCuanta,
+                
+                TipoCuenta = cuenta.TipoCuenta.ToString(),
+                NumeroCuenta = cuenta.NumeroCuenta,
                 EstadoCuenta = cuenta.EstadoCuenta.ToString(),
                 Saldo = cuenta.Saldo,
                 ExentoGmf = cuenta.ExentoGmf,
-                FechaCreacionCuanta = cuenta.FechaCreacionCuanta,
-                FechaActualizacionCuanta = cuenta.FechaActualizacionCuanta
+                FechaCreacionCuanta = cuenta.FechaCreacionCuenta,
+                FechaActualizacionCuanta = cuenta.FechaActualizacionCuenta,
+                ClienteId = cuenta.ClienteId
             };
         }
     }

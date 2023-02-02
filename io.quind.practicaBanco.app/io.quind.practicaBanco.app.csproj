@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\io.quind.practicaBanco.domain\io.quind.practicaBanco.domain.csproj" />
+    <ProjectReference Include="..\io.quind.practicaBanco.DTO\io.quind.practicaBanco.DTO.csproj" />
+  </ItemGroup>
+
 </Project>

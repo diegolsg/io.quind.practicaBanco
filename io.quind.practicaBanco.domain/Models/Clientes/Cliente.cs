@@ -1,30 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using io.quind.practicaBanco.domain.Models;
 using io.quind.practicaBanco.Models.Clientes;
 
 namespace io.quind.practicaBanco.Models.Clientes;
 
 public  class Cliente
 {
-    public Cliente(int id, int tiposIdentificacion, int numeroIdentificacion,
-        string nombre, string apellido, string email, DateTime? fechaNacimiento,
-        DateTime? fechaCreacionRegistro, DateTime? fechaActualizacionRegistro)
+    public Cliente()
     {
-        Id = id;
-        TiposIdentificacion = tiposIdentificacion;
+    }
+
+    public Cliente( int tiposIdentificacion, int numeroIdentificacion,
+        string nombre, string apellido, string email, DateTime fechaNacimiento)
+    {
+        
+        TiposIdentificacion = (TipoIdentificacionCliente)tiposIdentificacion;
         NumeroIdentificacion = numeroIdentificacion;
         Nombre = nombre;
         Apellido = apellido;
         Email = email;
         FechaNacimiento = fechaNacimiento;
-        FechaCreacionRegistro = fechaCreacionRegistro;
-        FechaActualizacionRegistro = fechaActualizacionRegistro;
+        FechaCreacionRegistro = DateTime.Now;
+        FechaActualizacionRegistro = DateTime.Now;
+
+ 
         
     }
 
     public int Id { get; set; }
 
-    public int TiposIdentificacion { get; set; }
+    public TipoIdentificacionCliente TiposIdentificacion { get; set; }
 
     public int NumeroIdentificacion { get; set; }
 
@@ -40,5 +46,5 @@ public  class Cliente
 
     public DateTime? FechaActualizacionRegistro { get; set; }
 
-    public virtual ICollection<CuentaEntidad> CuentaEntidads { get; } = new List<CuentaEntidad>();
+    
 }

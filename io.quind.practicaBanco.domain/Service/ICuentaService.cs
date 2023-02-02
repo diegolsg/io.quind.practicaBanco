@@ -1,5 +1,4 @@
-﻿
-using io.quind.practicaBanco.Models.Clientes;
+﻿using io.quind.practicaBanco.domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace io.quind.practicaBanco.domain.Service
 {
-     public interface ICuentaService
+    public interface ICuentaService
     {
-        Cliente findById(int id);
-        bool Crear(Cliente cliente);
-        bool Eliminar(int id);
-        bool Editar(Cliente cliente);
-    }
+            Cuenta findById(int id);
+            bool Crear(Cuenta cliente);
+            bool Eliminar(int id);
+            bool Editar(Cuenta cuenta);
+        }
 }
+
+
