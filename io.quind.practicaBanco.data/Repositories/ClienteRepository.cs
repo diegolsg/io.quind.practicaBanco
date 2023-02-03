@@ -73,6 +73,7 @@ namespace io.quind.practicaBanco.data.Repositories
             if (clienteDb != null)
 
             {
+                
                 clienteDb.NumeroIdentificacion = cliente.NumeroIdentificacion;
                 clienteDb.Nombre = cliente.Nombre;
                 clienteDb.Apellido = cliente.Apellido;

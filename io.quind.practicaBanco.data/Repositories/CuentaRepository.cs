@@ -4,6 +4,7 @@ using io.quind.practicaBanco.data.ClienteFactories;
 using io.quind.practicaBanco.data.CuentaFactories;
 using io.quind.practicaBanco.data.DBContexts;
 using io.quind.practicaBanco.domain.Models;
+using io.quind.practicaBanco.domain.Models.Clientes;
 using io.quind.practicaBanco.domain.Service;
 using io.quind.practicaBanco.entity.CuentasEntities;
 using io.quind.practicaBanco.Models.Clientes;
@@ -56,16 +57,26 @@ namespace io.quind.practicaBanco.data.Repositories
             return cuenta;
         }
 
-        public bool Eliminar(int id)
+        public void Eliminar(int id)
         {
             var cuentaDb = _contex.CuentaEntidads.Find(id);
             if (cuentaDb != null)
             {
-                _contex.CuentaEntidads.Remove(cuentaDb);
-                _contex.SaveChanges();
-                return true;
+                if (cuentaDb.Saldo == 0)
+                {
+                    _contex.CuentaEntidads.Remove(cuentaDb);
+                    _contex.SaveChanges();
+                    
+                }
+                else 
+                {
+                    throw new ClienteException("numero de caracteres en apellido o nombre incorrecto");
+
+                }
+
             }
-            return false;
+            
+            
         }
 
         public bool Editar(Cuenta cuenta)
@@ -77,7 +88,7 @@ namespace io.quind.practicaBanco.data.Repositories
 
             {
                 cuentaDb.TipoCuenta=(int)cuenta.TipoCuenta;
-                cuentaDb.NumeroCuenta = cuenta.NumeroCuenta;
+                
                 cuentaDb.EstadoCuenta = (int)cuenta.EstadoCuenta;
                 cuentaDb.Saldo = cuenta.Saldo;
                 cuentaDb.ExentoGmf = cuenta.ExentoGmf;

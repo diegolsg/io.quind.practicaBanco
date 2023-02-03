@@ -1,4 +1,4 @@
-﻿using io.quind.practicaBanco.domain.Models;
+﻿using io.quind.practicaBanco.domain.Models.Clientes;
 using io.quind.practicaBanco.entity.ClientesEntities;
 using io.quind.practicaBanco.Models.Clientes;
 

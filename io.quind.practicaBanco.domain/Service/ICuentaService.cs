@@ -11,7 +11,7 @@ namespace io.quind.practicaBanco.domain.Service
     {
             Cuenta findById(int id);
             bool Crear(Cuenta cliente);
-            bool Eliminar(int id);
+            void Eliminar(int id);
             bool Editar(Cuenta cuenta);
         }
 }

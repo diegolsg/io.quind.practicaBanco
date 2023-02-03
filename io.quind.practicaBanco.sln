@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "io.quind.practicaBanco.DTO"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "io.quind.practicaBanco.ap", "io.quind.practicaBanco.appi\io.quind.practicaBanco.ap.csproj", "{F3B2924D-D22A-4773-A2FE-B140AD3A697C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "io.quind.practicaBanco.unityTest", "io.quind.practicaBanco.unityTest\io.quind.practicaBanco.unityTest.csproj", "{F8E6EE84-4F29-4B0E-BAB5-89346793E057}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F3B2924D-D22A-4773-A2FE-B140AD3A697C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3B2924D-D22A-4773-A2FE-B140AD3A697C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3B2924D-D22A-4773-A2FE-B140AD3A697C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E6EE84-4F29-4B0E-BAB5-89346793E057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E6EE84-4F29-4B0E-BAB5-89346793E057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E6EE84-4F29-4B0E-BAB5-89346793E057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E6EE84-4F29-4B0E-BAB5-89346793E057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

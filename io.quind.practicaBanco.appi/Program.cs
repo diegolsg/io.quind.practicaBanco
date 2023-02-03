@@ -17,6 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<ICuentaService, CuentaRepository>();
 builder.Services.AddTransient<IClienteService, ClienteRepository>();
+builder.Services.AddTransient<ITransaccionService, TransaccionRepository>();
 
 var app = builder.Build();
 

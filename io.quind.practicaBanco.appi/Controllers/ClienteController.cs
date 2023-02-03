@@ -54,6 +54,7 @@ namespace io.quind.practicaBanco.ap.Controllers {
             _cliente.Eliminar(id);
             return Ok(new { message = "cliente eliminado" });
         }
+        
         [HttpPut]
         public IActionResult Editar(ClienteRequestDto cliente)
         {

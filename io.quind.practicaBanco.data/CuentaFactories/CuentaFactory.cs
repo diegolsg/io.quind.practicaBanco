@@ -1,7 +1,5 @@
-﻿
-
-using io.quind.banco.dominio.Models;
-using io.quind.practicaBanco.domain.Models;
+﻿using io.quind.practicaBanco.domain.Models;
+using io.quind.practicaBanco.domain.Models.Cuentas;
 using io.quind.practicaBanco.entity.CuentasEntities;
 
 namespace io.quind.practicaBanco.data.CuentaFactories
@@ -30,6 +28,7 @@ namespace io.quind.practicaBanco.data.CuentaFactories
             {
 
                 TipoCuenta = (TipoCuentaBancaria)cuenta.TipoCuenta,
+                
                 NumeroCuenta = cuenta.NumeroCuenta,
                 EstadoCuenta = (EstadoCuentaCliente)cuenta.EstadoCuenta,
                 Saldo = cuenta.Saldo,
