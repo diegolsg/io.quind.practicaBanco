@@ -1,4 +1,8 @@
-﻿using io.quind.practicaBanco.domain.Service;
+﻿using io.quind.practicaBanco.domain.Assemblers;
+using io.quind.practicaBanco.domain.Models.Cuentas.CuentasModels;
+using io.quind.practicaBanco.domain.Models.Transacciones.Services;
+using io.quind.practicaBanco.domain.Models.Transacciones.TransaccionModels;
+using io.quind.practicaBanco.DTO.CuentaDTOS;
 using io.quind.practicaBanco.DTO.TransaccionDTOS;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,8 +14,9 @@ namespace io.quind.practicaBanco.ap.Controllers
     public class TransaccionController: ControllerBase
     {
         private readonly ITransaccionService _transaccion;
+        private readonly IAssembler<TransaccionRequestDto, Transaccion> _assembler;
 
-    public TransaccionController(ITransaccionService transaccion)
+        public TransaccionController(ITransaccionService transaccion)
     {
         _transaccion = transaccion;
     }
@@ -21,7 +26,7 @@ namespace io.quind.practicaBanco.ap.Controllers
     {
         try
         {
-            var oTransaccion = _transaccion.findById(id);
+            var oTransaccion = _transaccion.BuscarPorNumCuen(id);
             if (oTransaccion == null)
             {
                 return NotFound();
@@ -32,21 +37,13 @@ namespace io.quind.practicaBanco.ap.Controllers
         catch (Exception ex)
         {
             return NotFound(ex.Message);
+            }
         }
-    }
-    [HttpPost]
-    public IActionResult crear(TransaccionRequestDto transaccion)
-
+        [HttpPost]
+        public IActionResult crear(TransaccionRequestDto model)
     {
-
-        if (_transaccion.Crear(transaccion.obtenerTransaccion()))
-        {
-            return Ok(new { message = "cliente creado" });
-        }
-        else
-            return NotFound();
-
-
+            _transaccion.Crear(_assembler.AssemblerObject(model));
+            return Ok(new { message = "transferencia realizada" });  
     }
  
     

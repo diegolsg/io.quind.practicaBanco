@@ -1,55 +1,51 @@
-﻿
-using io.quind.practicaBanco.data.ClienteFactories;
-using io.quind.practicaBanco.data.DBContexts;
-using io.quind.practicaBanco.data.TransaccionFactories;
-using io.quind.practicaBanco.domain.Service;
-
+﻿using io.quind.practicaBanco.data.DBContexts;
+using io.quind.practicaBanco.domain.Assemblers;
+using io.quind.practicaBanco.domain.Models.Transacciones.Repositories;
+using io.quind.practicaBanco.domain.Models.Transacciones.Services;
+using io.quind.practicaBanco.domain.Models.Transacciones.TransaccionModels;
 using io.quind.practicaBanco.entity.TransaccionesEntities;
-using io.quind.practicaBanco.Models.Clientes;
-using io.quind.practicaBanco.Models.Transacciones;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace io.quind.practicaBanco.data.Repositories
 {
-    public class TransaccionRepository:ITransaccionService
+    public class TransaccionRepository:ITransaccionRepository
+
     {
+        private readonly IAssembler<TransaccionEntidad,Transaccion> _modelAssembler;
+        private readonly IAssembler<Transaccion,TransaccionEntidad> _entityAssembler;
         private readonly BancoEjercicioContext _context;
-        public TransaccionRepository(BancoEjercicioContext context)
+        public TransaccionRepository(BancoEjercicioContext context,
+            IAssembler<TransaccionEntidad, Transaccion> modelAssembler, 
+            IAssembler<Transaccion, TransaccionEntidad> entityAssembler)
         {
             _context = context;
+            _modelAssembler = modelAssembler;
+            _entityAssembler = entityAssembler;
         }
-        public bool Crear(Transaccion transaccion)
+        public void Crear(Transaccion transaccion)
         {
             try
             {
-                var transaccionDB = _context.TransaccionEntidads.Add(TransaccionFactory.DominioEntidad(transaccion));
+                var transaccionDB = _context.TransaccionEntidads.Add(_entityAssembler.AssemblerObject(transaccion));
                 if (transaccionDB != null)
                 {
                     _context.SaveChanges();
 
                 }
-                return true;
-
-
             }
             catch (Exception ex)
             {
-                return false;
+              
             }
         }
 
-        public Transaccion findById(int id)
+        public Transaccion BuscarPorNumCuen(int id)
         {
             Transaccion transaccion = new Transaccion();
             try
             {
                 var transaccionDb = _context.TransaccionEntidads.Find(id);
 
-                transaccion = TransaccionFactory.EntidadDominio(transaccionDb ?? new TransaccionEntidad());
+                transaccion =_modelAssembler.AssemblerObject(transaccionDb ?? new TransaccionEntidad());
             }
             catch (Exception ex)
             {
@@ -57,5 +53,7 @@ namespace io.quind.practicaBanco.data.Repositories
             }
             return transaccion;
         }
+
+    
     }
 }

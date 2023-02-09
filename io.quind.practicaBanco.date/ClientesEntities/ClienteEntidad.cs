@@ -18,7 +18,7 @@ public partial class ClienteEntidad
 
     public string Email { get; set; } = null!;
 
-    public DateTime? FechaNacimiento { get; set; }
+    public DateTime FechaNacimiento { get; set; }
 
     public DateTime? FechaCreacionRegistro { get; set; }
 

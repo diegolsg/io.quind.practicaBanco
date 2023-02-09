@@ -1,6 +1,4 @@
-﻿
-
-using io.quind.practicaBanco.domain.Models;
+﻿using io.quind.practicaBanco.domain.Models.Cuentas.CuentasModels;
 
 namespace io.quind.practicaBanco.DTO.CuentaDTOS
 {
@@ -25,7 +23,7 @@ namespace io.quind.practicaBanco.DTO.CuentaDTOS
         {
             return new CuentaResponseDTO
             {
-                
+
                 TipoCuenta = cuenta.TipoCuenta.ToString(),
                 NumeroCuenta = cuenta.NumeroCuenta,
                 EstadoCuenta = cuenta.EstadoCuenta.ToString(),

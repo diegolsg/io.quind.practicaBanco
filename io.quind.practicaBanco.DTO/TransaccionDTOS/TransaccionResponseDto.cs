@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 using io.quind.practicaBanco.domain.Models.Transacciones;
-using io.quind.practicaBanco.Models.Transacciones;
+using io.quind.practicaBanco.domain.Models.Transacciones.TransaccionModels;
 
 namespace io.quind.practicaBanco.DTO.TransaccionDTOS
 {
-   public class TransaccionResponseDto
+    public class TransaccionResponseDto
     {
-        public string? TipoTransaccion { get; set; }
+        
 
         public decimal Monto { get; set; }
 
@@ -20,15 +20,18 @@ namespace io.quind.practicaBanco.DTO.TransaccionDTOS
         public DateTime? FechaTransaccion { get; set; }
 
         public int CuentaId { get; set; }
+        public string? TipoTransaccion { get; set; }
         public static TransaccionResponseDto Of(Transaccion transaccion) 
         {
             return new TransaccionResponseDto
             {
-                //TipoTransaccion = transaccion.TipoTransaccion.ToString,
+                
                 Monto=transaccion.Monto,
                 CuentaDestino=transaccion.CuentaDestino,
                 FechaTransaccion=transaccion.FechaTransaccion,
-                CuentaId=transaccion.CuentaId
+                TipoTransaccion = transaccion.TipoTransaccion.ToString(),
+                CuentaId = transaccion.CuentaId
+                
             };
         }
     }

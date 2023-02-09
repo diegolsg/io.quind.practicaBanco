@@ -1,50 +1,52 @@
 ﻿
-
-using io.quind.practicaBanco.data.ClienteFactories;
 using io.quind.practicaBanco.data.DBContexts;
-using io.quind.practicaBanco.domain.Service;
+using io.quind.practicaBanco.domain.Assemblers;
+using io.quind.practicaBanco.domain.Models.Clientes.ClientesModels;
+using io.quind.practicaBanco.domain.Models.Clientes.Repositories;
+using io.quind.practicaBanco.domain.Models.Clientes.Services;
 using io.quind.practicaBanco.entity.ClientesEntities;
-using io.quind.practicaBanco.Models.Clientes;
 
 namespace io.quind.practicaBanco.data.Repositories
 {
-    public class ClienteRepository:IClienteService
+    public class ClienteRepository:IClienteRepository
     {
+        private readonly IAssembler<ClienteEntidad, Cliente> _modelAssembler;
+        private readonly IAssembler<Cliente, ClienteEntidad> _entityAssembler;
         private readonly BancoEjercicioContext _contex;
 
-        public ClienteRepository(BancoEjercicioContext contex)
+        public ClienteRepository(BancoEjercicioContext contex,
+            IAssembler<Cliente, ClienteEntidad> entityAssembler,
+            IAssembler<ClienteEntidad, Cliente> modelAssembler)
         {
             _contex = contex;
+            _entityAssembler= entityAssembler;
+            _modelAssembler= modelAssembler;
         }
 
-        public bool Crear(Cliente cliente)
+        public void Crear(Cliente cliente)
         {
             try
             {
-                var clienteDB = _contex.ClienteEntidads.Add(ClienteFactory.DominioAEntidad(cliente));
-                if (clienteDB != null)
+                var clienteDB = _contex.ClienteEntidads.Add(_entityAssembler.AssemblerObject(cliente));
+                if (clienteDB == null)
                 {
                     _contex.SaveChanges();
 
                 }
-                return true;
-
-
             }
             catch (Exception ex)
             {
-                return false;
+          
             }
         }
 
-        public Cliente findById(int id)
+        public Cliente? BuscarPorNumIden(int numero)
         {
-            Cliente cliente = new Cliente();
+            Cliente cliente = null;
             try
             {
-                var clienteDb = _contex.ClienteEntidads.Find(id);
-
-                cliente = ClienteFactory.EntidadAdominio(clienteDb ?? new ClienteEntidad());
+                var clienteDb = _contex.ClienteEntidads.FirstOrDefault(c =>c.NumeroIdentificacion.Equals(numero));
+                cliente = _modelAssembler.AssemblerObject(clienteDb);
             }
             catch (Exception ex)
             {
@@ -81,24 +83,25 @@ namespace io.quind.practicaBanco.data.Repositories
                 clienteDb.Email = cliente.Email;
                 clienteDb.FechaNacimiento = cliente.FechaNacimiento;
                 clienteDb.FechaActualizacionRegistro = cliente.FechaActualizacionRegistro;
-
-
                 _contex.ClienteEntidads.Update(clienteDb);
                 _contex.SaveChanges();
                 return true;
-
             }
-
             return false;
-
         }
 
-
-
-
-
-
-
+        public void Save(Cliente cliente)
+        {
+            try
+            {
+                _contex.ClienteEntidads.Add(_entityAssembler.AssemblerObject(cliente));
+                _contex.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("error");
+            }
+        }
     }
 }
 

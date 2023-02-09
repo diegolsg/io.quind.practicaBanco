@@ -1,9 +1,9 @@
-﻿
-using io.quind.practicaBanco.domain.Service;
-using io.quind.practicaBanco.DTO.ClienteDTOS;
+﻿using io.quind.practicaBanco.domain.Assemblers;
+using io.quind.practicaBanco.domain.Models.Cuentas.CuentasModels;
+using io.quind.practicaBanco.domain.Models.Cuentas.Services;
 using io.quind.practicaBanco.DTO.CuentaDTOS;
 using Microsoft.AspNetCore.Mvc;
-using o.quind.practicaBanco.DTO.ClienteDTOS;
+
 
 namespace io.quind.practicaBanco.appi.Controllers
 {
@@ -12,18 +12,20 @@ namespace io.quind.practicaBanco.appi.Controllers
     public class CuentaController:ControllerBase
     {
         private readonly ICuentaService _cuenta;
+        private readonly IAssembler<CuentaRequest, Cuenta> _assembler;
 
-        public CuentaController(ICuentaService cliente)
+        public CuentaController(ICuentaService cuenta, IAssembler<CuentaRequest, Cuenta> assembler)
         {
-            _cuenta = cliente;
+            _cuenta = cuenta;
+            _assembler = assembler;
         }
 
-        [HttpGet("{id:int}")]
-        public IActionResult getCliente(int id)
+        [HttpGet("{numero:int}")]
+        public IActionResult getCuenta(int numero)
         {
             try
             {
-                var oCuenta = _cuenta.findById(id);
+                var oCuenta = _cuenta.BuscarPorNumCuen(numero);
                 if (oCuenta == null)
                 {
                     return NotFound();
@@ -37,20 +39,12 @@ namespace io.quind.practicaBanco.appi.Controllers
             }
         }
         [HttpPost]
-        public IActionResult crear(CuentaRequest cuenta)
-
+        public IActionResult crear(CuentaRequest model)
         {
-
-            if (_cuenta.Crear(cuenta.obtenerCuenta()))
-            {
-                return Ok(new { message = "cliente creado" });
-            }
-            else
-                return NotFound();
-
-
+            _cuenta.Crear(_assembler.AssemblerObject(model));
+             return Ok(new { message = "cuenta creado" });
         }
-        [HttpDelete("{id:int}")]
+        [HttpDelete("{id:int}" )]
         public IActionResult Eliminar(int id)
         {
             _cuenta.Eliminar(id);
@@ -61,7 +55,7 @@ namespace io.quind.practicaBanco.appi.Controllers
         {
             try
             {
-                _cuenta.Editar(cuenta.obtenerCuenta());
+                _cuenta.Editar(_assembler.AssemblerObject(cuenta));
                 return Ok(new { message = "cuenta editada" });
             }
             catch (Exception ex)

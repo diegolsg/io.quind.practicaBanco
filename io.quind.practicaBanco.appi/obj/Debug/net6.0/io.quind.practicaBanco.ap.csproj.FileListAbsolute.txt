@@ -3,7 +3,6 @@ C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.appi\o
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.appi\obj\Debug\net6.0\io.quind.practicaBanco.ap.AssemblyInfoInputs.cache
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.appi\obj\Debug\net6.0\io.quind.practicaBanco.ap.AssemblyInfo.cs
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.appi\obj\Debug\net6.0\io.quind.practicaBanco.ap.csproj.CoreCompileInputs.cache
-C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.appi\obj\Debug\net6.0\io.quind.practicaBanco.ap.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.appi\obj\Debug\net6.0\io.quind.practicaBanco.ap.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.appi\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.appi\bin\Debug\net6.0\appsettings.json

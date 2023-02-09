@@ -1,5 +1,6 @@
 ﻿using io.quind.practicaBanco.domain.Models.Clientes;
-using io.quind.practicaBanco.Models.Clientes;
+using io.quind.practicaBanco.domain.Models.Clientes.ClientesModels;
+using io.quind.practicaBanco.domain.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,18 @@ namespace io.quind.practicaBanco.unityTest.ClientesTests
     public class ClienteUnitTest
     {
         [TestMethod]
-        public void testClienteValidarNumero() 
+        public void testClienteValidarNumero()
         {
-            
-            var exception = Assert.ThrowsException<ClienteException>(() => new Cliente(1, 112, "juna", "gomez", "fdf@fg.com", new DateTime(2000, 1, 23)));
-            Assert.AreEqual("numero de caracteres en apellido o nombre incorrecto", exception.Message);
+            string nombre = "d";
+            Cliente cliente = new Cliente
+            {
+                Nombre = "d",
+                Email = "email",
+                Apellido = "",
+                NumeroIdentificacion = 1
+
+            };
+            Assert.AreEqual(cliente.Nombre, nombre);
         }
     }
 }

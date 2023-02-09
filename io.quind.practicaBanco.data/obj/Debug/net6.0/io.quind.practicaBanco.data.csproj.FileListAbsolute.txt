@@ -1,3 +1,8 @@
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.csproj.AssemblyReference.cache
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.AssemblyInfoInputs.cache
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.AssemblyInfo.cs
+C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.csproj.CoreCompileInputs.cache
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\bin\Debug\net6.0\io.quind.practicaBanco.data.deps.json
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\bin\Debug\net6.0\io.quind.practicaBanco.data.dll
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\bin\Debug\net6.0\io.quind.practicaBanco.data.pdb
@@ -5,11 +10,6 @@ C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\b
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\bin\Debug\net6.0\io.quind.practicaBanco.entity.dll
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\bin\Debug\net6.0\io.quind.practicaBanco.entity.pdb
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\bin\Debug\net6.0\io.quind.practicaBanco.domain.pdb
-C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.csproj.AssemblyReference.cache
-C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.AssemblyInfoInputs.cache
-C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.AssemblyInfo.cs
-C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.csproj.CoreCompileInputs.cache
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.csproj.CopyComplete
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\io.quind.practicaBanco.data.dll
 C:\Users\diego\source\repos\io.quind.practicaBanco\io.quind.practicaBanco.data\obj\Debug\net6.0\refint\io.quind.practicaBanco.data.dll

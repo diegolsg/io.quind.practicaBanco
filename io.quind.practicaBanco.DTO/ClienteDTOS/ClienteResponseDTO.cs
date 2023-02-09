@@ -1,5 +1,5 @@
 ﻿
-using io.quind.practicaBanco.Models.Clientes;
+using io.quind.practicaBanco.domain.Models.Clientes.ClientesModels;
 using System.ComponentModel.DataAnnotations;
 
 namespace o.quind.practicaBanco.DTO.ClienteDTOS
@@ -16,7 +16,7 @@ namespace o.quind.practicaBanco.DTO.ClienteDTOS
 
         public string? Email { get; set; }
 
-        public DateTime? FechaNacimiento { get; set; }
+        public DateTime FechaNacimiento { get; set; }
 
         public DateTime? FechaCreacionRegistro { get; set; }
 

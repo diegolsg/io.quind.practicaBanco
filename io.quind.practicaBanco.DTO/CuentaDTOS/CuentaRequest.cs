@@ -1,6 +1,4 @@
-﻿
-
-using io.quind.practicaBanco.domain.Models;
+﻿using io.quind.practicaBanco.domain.Models.Cuentas.CuentasModels;
 
 namespace io.quind.practicaBanco.DTO.CuentaDTOS
 {
@@ -22,9 +20,5 @@ namespace io.quind.practicaBanco.DTO.CuentaDTOS
         public int ClienteID { get; set; }
 
 
-        public Cuenta obtenerCuenta()
-        {
-            return new Cuenta(TipoCuenta, NumeroCuenta, EstadoCuenta, Saldo, ExentoGmf, ClienteID);
-        }
     }
 }

@@ -114,6 +114,9 @@ public partial class BancoEjercicioContext : DbContext
             entity.Property(e => e.Monto)
                 .HasColumnType("decimal(18, 0)")
                 .HasColumnName("monto");
+            entity.Property(e => e.TipoTransaccion)
+                  .HasColumnName("tipo_transaccion");
+
 
             entity.HasOne(d => d.Cuenta).WithMany(p => p.TransaccionEntidads)
                 .HasForeignKey(d => d.CuentaId)

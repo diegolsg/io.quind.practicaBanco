@@ -1,27 +1,38 @@
-﻿using io.quind.practicaBanco.domain.Service;
+﻿
+using io.quind.practicaBanco.domain.Assemblers;
+using io.quind.practicaBanco.domain.Models.Clientes.ClientesModels;
+using io.quind.practicaBanco.domain.Models.Clientes.Services;
 using io.quind.practicaBanco.DTO.ClienteDTOS;
+using io.quind.practicaBanco.entity.ClientesEntities;
 using Microsoft.AspNetCore.Mvc;
 using o.quind.practicaBanco.DTO.ClienteDTOS;
+using System.Net;
+using System.Reflection.PortableExecutable;
+using System.Reflection;
 
-namespace io.quind.practicaBanco.ap.Controllers {
+namespace io.quind.practicaBanco.ap.Controllers
+{
 
     [ApiController]
     [Route("[controller]")]
     public class ClienteController : ControllerBase
     {
         private readonly IClienteService _cliente;
+        private readonly IAssembler<ClienteRequestDto, Cliente> _assembler;
 
-        public ClienteController(IClienteService cliente)
+        public ClienteController(IClienteService cliente, 
+            IAssembler<ClienteRequestDto, Cliente> assembler)
         {
             _cliente = cliente;
+            _assembler = assembler;
         }
 
-        [HttpGet("{id:int}")]
-        public IActionResult getCliente(int id)
+        [HttpGet("{numero:int}")]
+        public IActionResult getCliente(int numero)
         {
             try
             {
-                var oCliente = _cliente.findById(id);
+                var oCliente = _cliente.BuscarPorNumIden(numero);
                 if (oCliente == null)
                 {
                     return NotFound();
@@ -34,20 +45,21 @@ namespace io.quind.practicaBanco.ap.Controllers {
                 return NotFound(ex.Message);
             }
         }
+
         [HttpPost]
-        public IActionResult crear(ClienteRequestDto cliente)
-
+        public IActionResult Crear(ClienteRequestDto model)
         {
-
-            if (_cliente.Crear(cliente.obtenerCliente()))
+            try
             {
-                return Ok(new { message = "cliente creado" });
+                _cliente.Crear(_assembler.AssemblerObject(model));
+                return Ok();
             }
-            else
-                return NotFound();
-
-
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
+
         [HttpDelete("{id:int}")]
         public IActionResult Eliminar(int id)
         {
@@ -60,7 +72,8 @@ namespace io.quind.practicaBanco.ap.Controllers {
         {
             try
             {
-                _cliente.Editar(cliente.obtenerCliente());
+                _cliente.Editar(_assembler.AssemblerObject(cliente));
+                
                 return Ok(new { message = "cliente editado" });
             }
             catch (Exception ex)
