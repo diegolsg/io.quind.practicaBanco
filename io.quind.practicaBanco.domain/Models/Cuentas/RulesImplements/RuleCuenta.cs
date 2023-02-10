@@ -18,22 +18,20 @@ namespace io.quind.practicaBanco.domain.Models.Cuentas.RulesImplements
             this.cuentaRepository = cuentaRepository;
         }
 
+        Cuenta cuenta = new Cuenta();
+
         public void Validar(Cuenta model)
         {
             
         }
-
-      
-
         public void ValidarEli(int id)
         {
             ValidarSaldoEliminar(id);
         }
-
         private void ValidarSaldoEliminar(int id) 
         {
-            Cuenta model= new Cuenta();
-            if (model.Saldo == 0) 
+           
+            if (cuenta.Saldo == 0) 
             {
                 cuentaRepository.Eliminar(id);
             } 

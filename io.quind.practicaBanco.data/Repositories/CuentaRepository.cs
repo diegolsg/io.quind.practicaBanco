@@ -87,9 +87,7 @@ namespace io.quind.practicaBanco.data.Repositories
             if (cuentaDb != null)
 
             {
-                cuentaDb.TipoCuenta = (int)cuenta.TipoCuenta;
                 cuentaDb.EstadoCuenta = (int)cuenta.EstadoCuenta;
-                cuentaDb.Saldo = cuenta.Saldo;
                 cuentaDb.ExentoGmf = cuenta.ExentoGmf;
                 cuentaDb.FechaActualizacionCuenta = cuenta.FechaActualizacionCuenta;
                 _contex.CuentaEntidads.Update(cuentaDb);

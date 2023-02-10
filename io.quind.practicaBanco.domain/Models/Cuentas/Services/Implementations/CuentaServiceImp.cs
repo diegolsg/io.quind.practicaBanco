@@ -21,14 +21,13 @@ public class CuentaServiceImp : ICuentaService
     {
         return cuentaRepository.BuscarPorNumCuen(numero);
     }
-
-    public void Crear(Cuenta cuenta)
+    public void Crear(Cuenta model)
     {
-        cuenta.FechaCreacionCuenta = DateTime.Now;
-        cuenta.FechaActualizacionCuenta= DateTime.Now;
-        cuentaRepository.Save(cuenta);
+        CrearNumeroCuenta(model);
+        model.FechaCreacionCuenta = DateTime.Now;
+        model.FechaActualizacionCuenta= DateTime.Now;
+        cuentaRepository.Save(model);
     }
-
     public bool Editar(Cuenta cuenta)
     {
         cuenta.FechaActualizacionCuenta = DateTime.Now;
@@ -39,6 +38,23 @@ public class CuentaServiceImp : ICuentaService
     public void Eliminar(int id)
     {
         rule.ValidarEli(id);
+    }
+    private void CrearNumeroCuenta(Cuenta cuenta)
+    {
+        Random random = new Random();
+        if ((int)cuenta.TipoCuenta == 1)
+        {
+            cuenta.NumeroCuenta = random.Next(53000000, 53999999);
+            cuenta.EstadoCuenta = (EstadoCuentaCliente)1;
+            cuenta.Saldo = 0;
+            //cuenta.ExentoGmf = 1;
+        }
+        if ((int)cuenta.TipoCuenta == 2)
+        {
+            cuenta.NumeroCuenta = random.Next(33000000, 33999999);
+            cuenta.Saldo = 0;
+            //cuenta.ExentoGmf = 1;
+        }
     }
 }
 

@@ -13,7 +13,7 @@ namespace io.quind.practicaBanco.ap.Assemblers.Implementations
                 TipoCuenta = (TipoCuentaBancaria)Tin.TipoCuenta,
                 NumeroCuenta = Tin.NumeroCuenta,
                 EstadoCuenta=(EstadoCuentaCliente)Tin.EstadoCuenta, 
-                Saldo=Tin.Saldo,   
+               // Saldo=Tin.Saldo,   
                 ExentoGmf=Tin.ExentoGmf,
                 ClienteId = Tin.ClienteID,
 

@@ -10,5 +10,6 @@ namespace io.quind.practicaBanco.domain.Rules
     {
         void Validar(T model);
         void ValidarEli(int  id);
+        
     }
 }

@@ -8,5 +8,6 @@ namespace io.quind.practicaBanco.domain.Models.Cuentas.Repositories
         void Save(Cuenta cuenta);
         void Eliminar(int id);
         bool Editar(Cuenta cuenta);
+        
     }
 }
